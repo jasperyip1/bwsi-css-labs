@@ -19,6 +19,14 @@ def max_subarray_sum(nums: list[int]) -> int:
     Returns:
         int: The maximum sum of any contiguous subarray.
     """
+    if not isinstance(nums, list):
+        raise TypeError("Input must be a list of integers.") # Added type check for input being a list
+
+    if not nums:
+        raise ValueError("Array must not be empty.") # Added check for empty array
+
+    if not all(isinstance(num, int) for num in nums):
+        raise TypeError("All elements in the array must be integers.") # Added type check for all elements being integers
 
     max_current = max_global = nums[0]
     
